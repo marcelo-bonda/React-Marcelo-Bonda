@@ -1,37 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/navbar'
 
+
+import './App.css';
+import './components/cartWidget/cartwidget.css';
+import './components/navbar/Navbar';
+import NavBar from './components/navbar/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/navbar/Navbar.css';
+import './components/ItemListContainer/ItemListContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import './components/ItemListContainer/ItemListContainer.css'
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
-    <>
-      <div>
-
-        <Navbar/>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    
+      <div className='App'>
+      <NavBar/>
+      <ItemListContainer greeting={'Regalos de diseño'}/>
       </div>
-      <h1>HOLIS</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          COMO VA? {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    
   )
 }
 
