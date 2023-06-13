@@ -12,6 +12,8 @@ import './components/ItemListContainer/ItemListContainer.css'
 
 
 
+
+
 function App() {
   
 
@@ -19,8 +21,8 @@ function App() {
     
       <div className='App'>
       <NavBar/>
-      <ItemListContainer greeting={'Regalos de diseño'}/>
-      
+      <ItemListContainer greeting={'Regalos de diseño'} />
+    
 
 
       </div>

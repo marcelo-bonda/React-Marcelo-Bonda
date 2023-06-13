@@ -1,0 +1,15 @@
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.agregar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
