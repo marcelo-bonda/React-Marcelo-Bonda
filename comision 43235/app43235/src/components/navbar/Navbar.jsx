@@ -14,7 +14,7 @@ const NavBar=()=>{
   return(
     <Navbar bg="orange" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">La tienda del gift</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/"} href="#home">La tienda del gift</Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -23,12 +23,12 @@ const NavBar=()=>{
             <Nav.Link href="#link">Contacto</Nav.Link>
             <NavDropdown title="Nuestros productos" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to={"/category/Bazar y hogar"}>Bazar y hogar</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item as={Link} to={"/category/Oficina"} >
                 Oficina
               </NavDropdown.Item>
-              <NavDropdown.Item to='Accesorios' href="#action/3.3">Accesorios</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/category/Accesorios"}>Accesorios</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item to='Para los mas chicos' href="#action/3.4">
+              <NavDropdown.Item as={Link} to={"/category/Para los mas chicos"} href="#action/3.4">
                 Para los mas chicos
               </NavDropdown.Item>
             </NavDropdown>

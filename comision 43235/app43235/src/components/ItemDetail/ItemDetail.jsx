@@ -1,6 +1,30 @@
 import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { useCart } from '../../Context/CartContex'
+import { useNotification } from '../notification/notificationService'
+import { Link } from 'react-router-dom'
+import { Cart } from '../cart/Cart'
+
 
 const ItemDetail = ({id,nombre, img, category, precio, stock})=>{
+
+const [quantity,setQuantity]=useState(0)
+
+const {addItem} = useCart()
+const {setNotification}=useNotification()
+
+
+const handleOnAdd = (quantity)=>{
+    setQuantity(quantity)
+    const objProduct ={
+        id, nombre, precio, quantity
+    }
+
+    addItem(objProduct)
+    setNotification('succes',`se agrego correctamente ${quantity} ${nombre} al carrito`)
+}
+
+
     return(
         <article className='CardItem'>
     <header className='header'>
@@ -18,8 +42,13 @@ const ItemDetail = ({id,nombre, img, category, precio, stock})=>{
     
     </section>
     <footer className='ItemFooter'>
-        <ItemCount initial={0} stock={stock} onAdd={(quantity)=>console.log('cantidad agregada',quantity)}/>
-        <button>ver menos</button>
+        {
+            quantity == 0
+            ? (stock>0 ? <ItemCount stock={stock} onAdd={handleOnAdd}/> : <p>No hay stock del producto</p>)
+            :<Link to={'/Cart'}>Finalizar compra</Link>
+        }
+
+
     </footer>
     </article>
     )

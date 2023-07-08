@@ -2,34 +2,32 @@ import { useState } from "react";
 import './ItemCount.css'
 
 
-const ItemCount =({stock,initial,onAdd})=>{
-    const [quantity,setQuantity] = useState(initial)
+const ItemCount =({ stock,onAdd })=>{
+    const [count , setCount] = useState(1)
 
-    const increment = () =>{
-        if(quantity<stock){
-            setQuantity(quantity+1)
-        }
-    }
+
     const decrement = () =>{
-        if(quantity<stock){
-            setQuantity(quantity-1)
+        if(count > 1){
+            setCount(prev=>prev-1)
         }
     }
+    const increment = () =>{
+        if(count < stock){
+            setCount(prev=>prev +1)
+        }
+    }
+    
 
     return(
         <div>
             <div className="botones">
+            <h4>{count}</h4>
             <button onClick={decrement}>-</button>
-            <h4>{quantity}</h4>
+            <button onClick={()=>onAdd(count)}>Agregar al carrito</button>
             <button onClick={increment}>+</button>
-            <h4></h4>
-        </div>
-        <div className="agregar">
-            <button onClick={()=>onAdd(quantity)} disabled={!stock}> Agregar al carrito</button>
+            
         </div>
         </div>
-
-       
     )
 }
 
