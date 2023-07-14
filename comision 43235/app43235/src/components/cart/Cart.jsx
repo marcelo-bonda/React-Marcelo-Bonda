@@ -12,7 +12,7 @@ export const Cart = ()=>{
             cart.map(prod =>{
                 return(
                     <div key={prod.id}>
-                        <h1>{prod.name}</h1>
+                        <h2>{prod.nombre}</h2>
                         <h3>{prod.precio}</h3>
                         <h3>cantidad:{prod.quantity}</h3>
                         <h3>subtotal:{prod.quantity * prod.precio}</h3>
