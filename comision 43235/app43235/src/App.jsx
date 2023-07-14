@@ -14,7 +14,7 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom'
 import { CartProvider } from './Context/CartContex';
 import { NotificationProvider } from './components/notification/notificationService';
 import { Cart } from './components/cart/Cart'
-import { Checkout } from './components/checkout/Checkout'
+import  Checkout  from './components/checkout/Checkout'
 
 
 

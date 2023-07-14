@@ -1,7 +1,7 @@
 import { collection, query, where, documentId, getDocs, writeBatch, addDoc } from "firebase/firestore"
-import { useCart } from "../../context/CartContext"
-import { db } from "../../services/firebase/firebaseConfig"
-import { useNotification } from "../../notification/NotificationService"
+import { useCart } from "../../Context/CartContex"
+import { db } from "../Service/firebaseConfig"
+import { useNotification } from "../notification/notificationService"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
